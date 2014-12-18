@@ -188,7 +188,7 @@
     :else (mapcat (fn [e1]
               (map (fn [e2] (cons e1 e2))
                    (permutations
-                    (remove (fn [x] (= x e1)) a-seq))))
+                    (remove #{e1} a-seq))))
             a-seq)))
 
 (defn powerset [a-set]
